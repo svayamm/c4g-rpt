@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<%= link_to 'farm', farms_path %>
+<%= link_to 'crop', crops_path %>
+<%= link_to 'finance', finances_path %></p>
+
+<p>
+  <strong>Outstanding loan:</strong>
+  <%= @finance.outstanding_loan %>
+</p>
+
+<p>
+  <strong>Interest rate:</strong>
+  <%= @finance.interest_rate %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @finance.budget %>
+</p>
+
+<p>
+  <strong>Farm id:</strong>
+  <%= @finance.farm_id %>
+</p>
+
+<p>
+  <strong>Crop id:</strong>
+  <%= @finance.crop_id %>
+</p>
+
+<%= link_to 'Edit', edit_finance_path(@finance) %>
+

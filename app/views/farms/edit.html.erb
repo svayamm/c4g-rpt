@@ -1,0 +1,10 @@
+<h1>Editing Farm</h1>
+
+<p>
+<%= link_to 'farm', farms_path %>
+<%= link_to 'crop', crops_path %>
+<%= link_to 'finance', finances_path %></p>
+
+<%= render 'form', farm: @farm %>
+
+<%= link_to 'Show', @farm %>

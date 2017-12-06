@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Finances</h1>
+
+<p>
+<%= link_to 'farm', farms_path %>
+<%= link_to 'crop', crops_path %>
+<%= link_to 'finance', finances_path %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Loan amount</th>
+      <th>Interest rate</th>
+      <th>Budget</th>
+      <th>Farm Id</th>
+      <th>Crop Id</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finances.each do |finance| %>
+      <tr>
+        <td><%= finance.outstanding_loan %></td>
+        <td><%= finance.interest_rate %></td>
+        <td><%= finance.budget %></td>
+        <td><%= finance.farm_id %></td>
+        <td><%= finance.crop_id %></td>
+        <td><%= link_to 'Show', finance %></td>
+        <td><%= link_to 'Edit', edit_finance_path(finance) %></td>
+        <td><%= link_to 'Destroy', finance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

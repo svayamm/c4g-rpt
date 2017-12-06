@@ -1,0 +1,38 @@
+<%= form_with(model: finance, local: true) do |form| %>
+  <% if finance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(finance.errors.count, "error") %> prohibited this finance from being saved:</h2>
+
+      <ul>
+      <% finance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :current_loan_amount_in_Rupees %>
+    <%= form.text_field :outstanding_loan, id: :finance_outstanding_loan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :interest_rate_in_decimal %>
+    <%= form.text_field :interest_rate, id: :finance_interest_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :budget_in_Rupees %>
+    <%= form.text_field :budget, id: :finance_budget %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :farm_id, :value =>@finance.farm_id %>
+    <%= form.hidden_field :crop_id, :value =>@finance.crop_id %>
+  </div>
+
+  <div class="actions">
+    
+    <%= form.submit 'confirm' %>
+  </div>
+<% end %>

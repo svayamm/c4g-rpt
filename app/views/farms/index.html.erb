@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<h1>Farms</h1>
+<p>
+<%= link_to 'farm', farms_path %>
+<%= link_to 'crop', crops_path %>
+<%= link_to 'finance', finances_path %></p>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Size (Hectors)</th>
+      <th>Location</th>
+      <th>Irrigation</th>
+      <th>Farm Id</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @farms.each do |farm| %>
+      <tr>
+        <td><%= farm.size %></td>
+        <td><%= farm.location %></td>
+        <td><%= farm.irrigation %></td>
+        <td><%= farm.id %></td>
+        <td><%= link_to 'Show', farm %></td>
+        <td><%= link_to 'Edit', edit_farm_path(farm) %></td>
+        <td><%= link_to 'Destroy', farm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Farm', new_farm_path %>

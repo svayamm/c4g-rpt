@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<%= link_to 'farm', farms_path %>
+<%= link_to 'crop', crops_path %>
+<%= link_to 'finance', finances_path %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @crop.name %>
+</p>
+
+<p>
+  <strong>Season:</strong>
+  <%= @crop.season %>
+</p>
+
+<p>
+  <strong>Farm id:</strong>
+  <%= @crop.farm_id %>
+</p>
+
+<p>
+  <strong>Crop id:</strong>
+  <%= @crop.id %>
+</p>
+
+<%= link_to 'Edit', edit_crop_path(@crop) %>
+<%= link_to 'Next', new_finance_path(farm_id: @crop.farm_id, crop_id: @crop.id) %> 

@@ -1,0 +1,13 @@
+<%= simple_form_for @farm do |form| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Farm</legend>
+    <%= form.input :size, :label => "Size (hectares)" %>
+    <%= form.input :location, collection: Farm::DISTRICTS %>
+    <%= form.input :irrigation %>
+    <div class="form-actions">
+      <%= form.submit 'confirm', class: 'button' %>
+      <%= link_to 'Cancel', farms_path, :class => 'button secondary' %>
+    </div>
+  </fieldset>
+  
+<% end %>
