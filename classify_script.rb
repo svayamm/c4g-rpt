@@ -40,6 +40,7 @@ inst.setValue(data.attribute(5), 12345) #Total cost of cultivation
 inst.setValue(data.attribute(6), 20) # Temperature
 inst.setValue(data.attribute(7), 122.202) # Rainfall
 inst.setDataset(data)
-at_exit do 
-    puts rFModel.distributionForInstance(inst)[0]
+
+open('myfile.txt', 'w') do |f|
+    f.puts rFModel.distributionForInstance(inst)[0]
 end

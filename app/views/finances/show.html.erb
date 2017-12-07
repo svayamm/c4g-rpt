@@ -33,4 +33,4 @@
 
 <%= link_to 'Edit', edit_finance_path(@finance) %>
 
-<%= link_to 'Generate Result', result_path() %>
+<%= link_to 'Generate Result', result_path(:farm => @finance.farm.id, :fin => @finance.id, :crop_id => @finance.crop_id) %>

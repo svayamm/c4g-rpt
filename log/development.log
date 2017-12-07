@@ -9123,3 +9123,1309 @@ Processing by FinancesController#show as HTML
 Completed 200 OK in 38ms (Views: 31.2ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-06 16:46:37 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  Rendered finances/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 606ms (Views: 521.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-06 16:46:52 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  Rendered finances/show.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `crop' for #<Finance:0x00007ffbb6be5208>
+Did you mean?  crop_id):
+    32: 
+    33: <p>
+    34:   <strong>Crop id:</strong>
+    35:   <%= @finance.crop.id %>
+    36: </p>
+    37: 
+    38: <%= link_to 'Edit', edit_finance_path(@finance) %>
+  
+app/views/finances/show.html.erb:35:in `_app_views_finances_show_html_erb__4083735304616708878_70359564410240'
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-06 16:47:07 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 73ms (Views: 68.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-06 16:50:24 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Crop with 'id'=):
+  
+app/views/finances/show.html.erb:37:in `_app_views_finances_show_html_erb__4083735304616708878_70359570574200'
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-06 16:51:02 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-06 16:56:27 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-06 16:57:42 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-06 17:07:51 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  Rendered finances/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 75ms (Views: 47.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:07:53 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:21:14 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8427ms (Views: 41.8ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:22:03 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 8503ms
+
+
+  
+SyntaxError (/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/pages/result.html.erb:3: syntax error, unexpected ')'
+output_buffer.append=( @res %);@output_buffer.safe_append='<
+                              ^
+/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/pages/result.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/pages/result.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/pages/result.html.erb:3: syntax error, unexpected ')'
+app/views/pages/result.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/pages/result.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/pages_controller.rb:4:in `show'
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:23:42 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 8425ms
+
+
+  
+SyntaxError (/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/pages/result.html.erb:3: syntax error, unexpected ')'
+output_buffer.append=( @res %);@output_buffer.safe_append='<
+                              ^
+/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/pages/result.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/pages/result.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/pages/result.html.erb:3: syntax error, unexpected ')'
+app/views/pages/result.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/pages/result.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/pages_controller.rb:4:in `show'
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:24:15 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8237ms (Views: 27.2ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:24:47 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 8709ms (Views: 42.7ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:25:38 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8619ms (Views: 33.9ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:25:57 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8755ms (Views: 44.6ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:26:20 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8838ms (Views: 37.4ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:27:30 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9073ms (Views: 64.9ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:28:10 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 9148ms (Views: 48.6ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:50:39 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9598ms (Views: 59.8ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:52:52 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 9519ms (Views: 41.4ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:54:12 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (8150.7ms)
+Completed 200 OK in 17000ms (Views: 8180.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:54:46 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (8130.1ms)
+Completed 200 OK in 16707ms (Views: 8160.5ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 17:56:00 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 8271ms (Views: 27.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 18:02:25 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8400ms (Views: 38.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 18:46:05 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8751ms (Views: 162.7ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 19:05:46 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8426ms (Views: 38.7ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 19:07:53 -0500
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9085ms (Views: 675.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 19:22:49 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8381ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 19:33:41 -0500
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 9741ms (Views: 564.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 19:34:23 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 8535ms (Views: 211.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 19:41:44 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 8791ms (Views: 228.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 19:42:42 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8326ms (Views: 27.6ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 20:01:04 -0500
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/controllers/pages_controller.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+ @res = system(java -jar jruby.jar classify_script.rb fin.ar
+                              ^
+/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/controllers/pages_controller.rb:3: syntax error, unexpected ')', expecting keyword_end
+r classify_script.rb fin.arff)
+                              ^):
+  
+app/controllers/pages_controller.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/controllers/pages_controller.rb:3: syntax error, unexpected ')', expecting keyword_end
+Started GET "/result" for 127.0.0.1 at 2017-12-06 20:01:24 -0500
+  
+SyntaxError (/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/controllers/pages_controller.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  res = system(java -jar jruby.jar classify_script.rb fin.ar
+                              ^
+/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/controllers/pages_controller.rb:3: syntax error, unexpected ')', expecting keyword_end
+r classify_script.rb fin.arff)
+                              ^):
+  
+app/controllers/pages_controller.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/controllers/pages_controller.rb:3: syntax error, unexpected ')', expecting keyword_end
+Started GET "/result" for 127.0.0.1 at 2017-12-06 20:02:13 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 9856ms (Views: 674.3ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 20:04:23 -0500
+Processing by PagesController#show as HTML
+Started GET "/result" for 127.0.0.1 at 2017-12-06 20:05:10 -0500
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 9570ms (Views: 943.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 20:14:30 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9164ms (Views: 209.5ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 21:10:05 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 20369ms (Views: 9848.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 21:25:18 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 10039ms (Views: 991.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 22:01:51 -0500
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 9557ms (Views: 719.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 22:03:44 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8991ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 22:17:14 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 10304ms (Views: 201.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 23:21:53 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 10826ms (Views: 707.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 23:24:51 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9043ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 23:25:21 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8911ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 23:28:55 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 9187ms (Views: 97.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-06 23:40:25 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9045ms (Views: 199.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 00:19:44 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9695ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 00:24:31 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 10274ms (Views: 93.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 00:25:20 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9131ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 00:31:47 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9267ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 00:40:22 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10610ms (Views: 700.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:00:33 -0500
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 1601ms (Views: 1298.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:01:09 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 362ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:02:48 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 589ms (Views: 241.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:03:00 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 47355ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:04:18 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 39839ms (Views: 79.1ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:05:21 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 43262ms (Views: 41.2ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:06:11 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 40110ms
+
+
+  
+SyntaxError (/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/pages/result.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+output_buffer.append=(@res res);@output_buffer.safe_append='
+                              ^):
+  
+app/views/pages/result.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/pages_controller.rb:4:in `show'
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:08:26 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39320ms (Views: 31.2ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:09:18 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42111ms (Views: 33.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:10:22 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 40286ms (Views: 43.6ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:11:45 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40584ms (Views: 31.3ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:13:27 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 80944ms (Views: 30.5ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:15:10 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40124ms (Views: 42.4ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:20:58 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41323ms (Views: 30.3ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:22:05 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 40011ms (Views: 56.8ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:23:34 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 78501ms (Views: 43.4ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:40:08 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 47491ms (Views: 58.1ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:42:05 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 72596ms (Views: 239.2ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:44:54 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 70717ms (Views: 614.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:48:14 -0500
+Processing by PagesController#show as HTML
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:49:14 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 62951ms (Views: 1605.3ms | ActiveRecord: 0.0ms)
+
+
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 56722ms (Views: 143.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:54:51 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 51041ms (Views: 129.7ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 06:56:11 -0500
+  
+ActionController::RoutingError (undefined local variable or method `params' for PagesController:Class):
+  
+app/controllers/pages_controller.rb:2:in `<class:PagesController>'
+app/controllers/pages_controller.rb:1:in `<top (required)>'
+Started GET "/result" for 127.0.0.1 at 2017-12-07 07:00:42 -0500
+Processing by PagesController#show as HTML
+Started GET "/result" for 127.0.0.1 at 2017-12-07 07:01:25 -0500
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52644ms (Views: 176.0ms)
+
+
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 64905ms (Views: 272.2ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 07:03:27 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 52143ms (Views: 50.6ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 07:06:31 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 74313ms (Views: 700.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 07:07:48 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 50175ms (Views: 52.3ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 07:10:28 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52828ms (Views: 152.5ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 07:12:57 -0500
+Processing by PagesController#show as HTML
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 57533ms (Views: 159.5ms)
+
+
+Started GET "/result" for 127.0.0.1 at 2017-12-07 07:14:38 -0500
+  
+AbstractController::ActionNotFound (The action 'show(:finance)' could not be found for PagesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/finances/new?crop_id=19&farm_id=14" for 127.0.0.1 at 2017-12-07 07:16:53 -0500
+Processing by FinancesController#new as HTML
+  Parameters: {"crop_id"=>"19", "farm_id"=>"14"}
+  Rendering finances/new.html.erb within layouts/application
+  Rendered finances/_form.html.erb (21.3ms)
+  Rendered finances/new.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 91ms (Views: 60.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-07 07:16:57 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (3.0ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  Rendered finances/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 47ms (Views: 35.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-07 07:17:59 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  Rendered finances/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/result.15" for 127.0.0.1 at 2017-12-07 07:18:02 -0500
+Processing by PagesController#show as 
+Started GET "/result.15" for 127.0.0.1 at 2017-12-07 07:18:23 -0500
+Processing by PagesController#show as 
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-07 07:18:46 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  Rendered finances/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 122ms (Views: 117.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/result?fin_id=15" for 127.0.0.1 at 2017-12-07 07:18:47 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"fin_id"=>"15"}
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 67623ms (Views: 158.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-07 07:19:19 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (1.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  Rendered finances/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 149ms (Views: 131.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/result?crop_id=19&fin_id=15" for 127.0.0.1 at 2017-12-07 07:19:20 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "fin_id"=>"15"}
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-07 07:19:42 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  Rendered finances/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 188ms (Views: 182.0ms | ActiveRecord: 0.3ms)
+
+
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 82741ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-07 07:20:12 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  Rendered finances/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/finances/show.html.erb:36: syntax error, unexpected tSYMBEG, expecting '('
+path(:farm => @finance.farm. :fin => @finance, :crop_id => @
+                              ^
+/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/finances/show.html.erb:36: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+ :fin => @finance, :crop_id => @finance.crop_id) );
+                              ^
+/Volumes/Transcend/CMU Stored/Senior Fall '17/Computing for Good/c4grpt-master/app/views/finances/show.html.erb:36: syntax error, unexpected ')', expecting keyword_end
+crop_id => @finance.crop_id) );
+                              ^):
+  
+app/views/finances/show.html.erb:36: syntax error, unexpected tSYMBEG, expecting '('
+app/views/finances/show.html.erb:36: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+app/views/finances/show.html.erb:36: syntax error, unexpected ')', expecting keyword_end
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 91152ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 76158ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/finances/15" for 127.0.0.1 at 2017-12-07 07:21:10 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (2.7ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (116.8ms)
+Completed 200 OK in 203ms (Views: 192.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:21:12 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 49854ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:22:46 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mCrop Load (1.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 52522ms (Views: 31.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:23:57 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mCrop Load (1.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46018ms (Views: 27.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:30:52 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 57618ms (Views: 63.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:33:08 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44861ms (Views: 36.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:38:04 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mCrop Load (0.4ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 61938ms (Views: 64.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:55:43 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 29ms (ActiveRecord: 4.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Farm with 'id'=):
+  
+app/controllers/pages_controller.rb:10:in `show'
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:56:05 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Farm with 'id'=):
+  
+app/controllers/pages_controller.rb:10:in `show'
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 07:56:31 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 79ms (Views: 72.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:57:02 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 15ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Farm with 'id'=2):
+  
+app/controllers/pages_controller.rb:11:in `show'
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:57:21 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 14ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Farm with 'id'=2):
+  
+app/controllers/pages_controller.rb:11:in `show'
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:57:37 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" ORDER BY "farms"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.4ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 90ms (ActiveRecord: 5.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Finance with 'id'=):
+  
+app/controllers/pages_controller.rb:18:in `show'
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 07:58:47 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (21.4ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 48617ms (Views: 46.1ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:02:26 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 47558ms (Views: 36.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/result?crop_id=2&farm=7&fin=5" for 127.0.0.1 at 2017-12-07 08:03:48 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"2", "farm"=>"7", "fin"=>"5"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Crop with 'id'=2):
+  
+app/controllers/pages_controller.rb:16:in `show'
+Started GET "/result?crop_id=19&farm=4&fin=15" for 127.0.0.1 at 2017-12-07 08:03:59 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"4", "fin"=>"15"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Farm with 'id'=4):
+  
+app/controllers/pages_controller.rb:11:in `show'
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:04:10 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 47026ms (Views: 61.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:07:23 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46296ms (Views: 37.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:08:42 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46302ms (Views: 34.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:10:04 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 45950ms (Views: 33.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:12:09 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45718ms (Views: 55.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:13:36 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46628ms (Views: 35.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:15:24 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 51762ms (Views: 41.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:17:00 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 518ms (Views: 53.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:17:22 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 608ms (Views: 77.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:19:45 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46071ms (Views: 38.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:21:10 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:21:58 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.5ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 48351ms (Views: 49.9ms | ActiveRecord: 0.5ms)
+
+
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 45359ms (Views: 32.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:23:02 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 45916ms (Views: 56.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/result?crop_id=19&farm=14&fin=15" for 127.0.0.1 at 2017-12-07 08:25:18 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"19", "farm"=>"14", "fin"=>"15"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2017-12-07 08:25:41 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 95ms (Views: 91.1ms | ActiveRecord: 0.0ms)
+
+
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 48207ms (Views: 30.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 08:27:45 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 08:27:47 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (25.2ms)
+  Rendered farms/new.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 107ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for 127.0.0.1 at 2017-12-07 08:28:02 -0500
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wurmzHjixvzvKYd+IxZDBMyDWiInIP2EaELVPzSQ5yuubzqjDXlDzVKTNYyLbdr3R/KHMKfA6v1n/DNq2fLdCA==", "farm"=>{"size"=>"3", "location"=>"KURNOOL", "irrigation"=>"s"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "farms" ("size", "location", "irrigation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["size", 3.0], ["location", "KURNOOL"], ["irrigation", "s"], ["created_at", "2017-12-07 13:28:02.217574"], ["updated_at", "2017-12-07 13:28:02.217574"]]
+  [1m[35m (71.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/15
+Completed 302 Found in 82ms (ActiveRecord: 75.4ms)
+
+
+Started GET "/farms/15" for 127.0.0.1 at 2017-12-07 08:28:02 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 162ms (Views: 155.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/crops/new?farm_id=15" for 127.0.0.1 at 2017-12-07 08:28:04 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"15"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (62.5ms)
+  Rendered crops/new.html.erb within layouts/application (66.9ms)
+Completed 200 OK in 195ms (Views: 188.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/crops" for 127.0.0.1 at 2017-12-07 08:28:12 -0500
+Processing by CropsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TSJEwn2fq4W6+EH9L/ZkgeEwZiWOYcIWa/FqwtHE4SVniR+U3/BS9wtJBzyrVTusBgH+7OKBVhEzg8ZTzXtf6g==", "crop"=>{"name"=>"Cotton", "season"=>"Summer", "farm_id"=>"15"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "crops" ("name", "season", "created_at", "updated_at", "farm_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cotton"], ["season", "Summer"], ["created_at", "2017-12-07 13:28:12.410565"], ["updated_at", "2017-12-07 13:28:12.410565"], ["farm_id", 15]]
+  [1m[35m (20.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/crops/20
+Completed 302 Found in 32ms (ActiveRecord: 21.7ms)
+
+
+Started GET "/crops/20" for 127.0.0.1 at 2017-12-07 08:28:12 -0500
+Processing by CropsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering crops/show.html.erb within layouts/application
+  Rendered crops/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 75ms (Views: 69.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/finances/new?crop_id=20&farm_id=15" for 127.0.0.1 at 2017-12-07 08:28:13 -0500
+Processing by FinancesController#new as HTML
+  Parameters: {"crop_id"=>"20", "farm_id"=>"15"}
+  Rendering finances/new.html.erb within layouts/application
+  Rendered finances/_form.html.erb (4.7ms)
+  Rendered finances/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 77ms (Views: 70.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/finances" for 127.0.0.1 at 2017-12-07 08:28:26 -0500
+Processing by FinancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5iFeBM8XQ7lYEqfvzLi6ojE+au3Vs3n/0Y4KJHhkZ0njtKN97euKvCYElGxWbyvKzKiC5aLrEggr4Ji+X2hjVw==", "finance"=>{"outstanding_loan"=>"1000", "interest_rate"=>"0.2", "budget"=>"100000", "farm_id"=>"15", "crop_id"=>"20"}, "commit"=>"confirm"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "finances" ("outstanding_loan", "interest_rate", "created_at", "updated_at", "farm_id", "budget", "crop_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["outstanding_loan", 1000.0], ["interest_rate", 0.2], ["created_at", "2017-12-07 13:28:26.814333"], ["updated_at", "2017-12-07 13:28:26.814333"], ["farm_id", 15], ["budget", 100000], ["crop_id", 20]]
+  [1m[35m (22.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/finances/16
+Completed 302 Found in 35ms (ActiveRecord: 23.6ms)
+
+
+Started GET "/finances/16" for 127.0.0.1 at 2017-12-07 08:28:26 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 87ms (Views: 54.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/result?crop_id=20&farm=15&fin=16" for 127.0.0.1 at 2017-12-07 08:28:29 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"20", "farm"=>"15", "fin"=>"16"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47977ms (Views: 45.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/result?crop_id=20&farm=15&fin=16" for 127.0.0.1 at 2017-12-07 09:05:01 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"20", "farm"=>"15", "fin"=>"16"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 45612ms (Views: 37.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/result?crop_id=20&farm=15&fin=16" for 127.0.0.1 at 2017-12-07 09:07:13 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"20", "farm"=>"15", "fin"=>"16"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.5ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46945ms (Views: 50.2ms | ActiveRecord: 1.0ms)
+
+
