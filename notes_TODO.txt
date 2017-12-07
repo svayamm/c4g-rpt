@@ -1,0 +1,30 @@
+- To run: Install latest version of ruby, run 'bundle install' from containing folder, run 'rails server'
+
+- Currently, model is trained using RandomForest model generated in R. Model is 
+stored in 'rpt_rf.pmml' file. To generate new file, follow this tutorial: 
+https://github.com/asafschers/scoruby/wiki/Random-Forest
+& https://medium.com/@aschers/deploy-machine-learning-models-from-r-research-to-ruby-go-production-with-pmml-b41e79445d3d 
+
+If you would instead like to implement a different model, ML frameworks for Ruby
+can be found here: https://github.com/josephmisiti/awesome-machine-learning 
+
+- Add validations in models (currently datatypes, values, etc. not validated)
+
+- Currently, params for result (pages#show) not filtered - add proper whitelist 
+for params
+
+- 'Generate prediction' on Finance#show could be converted to AJAX JavaScript 
+fn.; so result appears on same page...
+
+- Certain commodity indicies appear to be missing in 'msp.csv' (Minimum Support 
+Price for a commodity for a given year) file - If that can be corrected, 
+'test2.rb' file & pages_controller should be modified to use actual values in 
+generating profit prediction.
+
+- Original 'classify_script' made use of Java SE 6 Legacy, Jruby, & Weka-jruby 
+gem. Script runs fine on its own, but cannot be called in pages_controller (due 
+to issues with Java/Jruby/Rubygems bindings). You can run it separately using 
+'$ java -jar jruby.jar classify_script.rb fin.arff' -- this model is built 
+using Weka's RandomForest model, which appears to be more accurate than the 
+Scoruby implementation. Script outputs to 'myfile.txt'. To update data used in 
+this model, use Weka to convert an updated csv into an .arff file.
