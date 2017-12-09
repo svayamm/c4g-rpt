@@ -1,3 +1,5 @@
+- To clone from GitHub, first install GitLFS (Large File System).
+
 - To run: Install latest version of ruby, run 'bundle install' from containing folder, run 'rails server'
 
 - Currently, model is trained using RandomForest model generated in R. Model is 

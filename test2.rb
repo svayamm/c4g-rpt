@@ -1,6 +1,5 @@
 require 'scoruby'
 random_forest = Scoruby.load_model 'rpt_rf.pmml'
-# rpt_rf.pmml file included in zip (too large to upload to GitHub)
 
 input_array = ARGV
 # Arguments: crop_index , district_index, season_index, total_cost, area, outstanding_loan, interest_rate
