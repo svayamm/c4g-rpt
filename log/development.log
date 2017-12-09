@@ -10429,3 +10429,1027 @@ Processing by PagesController#show as HTML
 Completed 200 OK in 46945ms (Views: 50.2ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-12-07 10:07:29 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 611ms (Views: 593.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 10:07:31 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.9ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 150ms (Views: 131.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 10:07:33 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (31.9ms)
+  Rendered farms/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 78ms (Views: 71.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for 127.0.0.1 at 2017-12-07 10:08:09 -0500
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CUEiK3fpn5gseWRHJyaVuNyFHEj+6I9k+467iwwhIkly6IKoTPhqiZ0GNbovM6Vrdrecc5VL3+dBlDqOgi3+zA==", "farm"=>{"size"=>"2", "location"=>"RAIGARH", "irrigation"=>"no"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "farms" ("size", "location", "irrigation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["size", 2.0], ["location", "RAIGARH"], ["irrigation", "no"], ["created_at", "2017-12-07 15:08:09.287593"], ["updated_at", "2017-12-07 15:08:09.287593"]]
+  [1m[35m (90.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/16
+Completed 302 Found in 97ms (ActiveRecord: 92.0ms)
+
+
+Started GET "/farms/16" for 127.0.0.1 at 2017-12-07 10:08:09 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 159ms (Views: 149.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/crops/new?farm_id=16" for 127.0.0.1 at 2017-12-07 10:08:12 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"16"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (29.5ms)
+  Rendered crops/new.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 127ms (Views: 103.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/crops" for 127.0.0.1 at 2017-12-07 10:08:20 -0500
+Processing by CropsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xgyrj2D9zNbfC4l4bblrmOXlk7TOBtFCfx2TLpAuu1K4kgCgKmx00p0sqAheBppbr/BunXeMaq8FVY2m+mYblw==", "crop"=>{"name"=>"Cotton", "season"=>"Kharif", "farm_id"=>"16"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "crops" ("name", "season", "created_at", "updated_at", "farm_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cotton"], ["season", "Kharif"], ["created_at", "2017-12-07 15:08:20.074475"], ["updated_at", "2017-12-07 15:08:20.074475"], ["farm_id", 16]]
+  [1m[35m (92.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/crops/21
+Completed 302 Found in 117ms (ActiveRecord: 93.7ms)
+
+
+Started GET "/crops/21" for 127.0.0.1 at 2017-12-07 10:08:20 -0500
+Processing by CropsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering crops/show.html.erb within layouts/application
+  Rendered crops/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 59ms (Views: 46.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/finances/new?crop_id=21&farm_id=16" for 127.0.0.1 at 2017-12-07 10:08:21 -0500
+Processing by FinancesController#new as HTML
+  Parameters: {"crop_id"=>"21", "farm_id"=>"16"}
+  Rendering finances/new.html.erb within layouts/application
+  Rendered finances/_form.html.erb (3.3ms)
+  Rendered finances/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 66ms (Views: 44.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/finances" for 127.0.0.1 at 2017-12-07 10:08:41 -0500
+Processing by FinancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/BFDaMs9XBqUQGPvMPv4blADUxX/ouu3SRclXh2iFtP29OLH9QyeOtLOwmb0/WO6atHQF8Ni8Glyii7u+OJseQ==", "finance"=>{"outstanding_loan"=>"5000", "interest_rate"=>"0.02", "budget"=>"15000", "farm_id"=>"16", "crop_id"=>"21"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "finances" ("outstanding_loan", "interest_rate", "created_at", "updated_at", "farm_id", "budget", "crop_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["outstanding_loan", 5000.0], ["interest_rate", 0.02], ["created_at", "2017-12-07 15:08:41.374191"], ["updated_at", "2017-12-07 15:08:41.374191"], ["farm_id", 16], ["budget", 15000], ["crop_id", 21]]
+  [1m[35m (78.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/finances/17
+Completed 302 Found in 92ms (ActiveRecord: 79.4ms)
+
+
+Started GET "/finances/17" for 127.0.0.1 at 2017-12-07 10:08:41 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 51ms (Views: 45.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/result?crop_id=21&farm=16&fin=17" for 127.0.0.1 at 2017-12-07 10:08:43 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"21", "farm"=>"16", "fin"=>"17"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47485ms (Views: 53.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-07 10:27:33 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 10:27:46 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 60ms (Views: 53.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 10:27:48 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (16.5ms)
+  Rendered farms/new.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 67ms (Views: 60.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for 127.0.0.1 at 2017-12-07 10:27:57 -0500
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Aq5VJpO2A4Bc9it/gb6tG6cpVZ0olD7WIPuykINA5t55B/WlqKf2ke2JeoKJq53IDRvVpkM3blWa4TOVDUw6Ww==", "farm"=>{"size"=>"3", "location"=>"KURNOOL", "irrigation"=>""}, "commit"=>"confirm"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "farms" ("size", "location", "irrigation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["size", 3.0], ["location", "KURNOOL"], ["irrigation", ""], ["created_at", "2017-12-07 15:27:57.500582"], ["updated_at", "2017-12-07 15:27:57.500582"]]
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/17
+Completed 302 Found in 30ms (ActiveRecord: 21.5ms)
+
+
+Started GET "/farms/17" for 127.0.0.1 at 2017-12-07 10:27:57 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 54ms (Views: 47.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/crops/new?farm_id=17" for 127.0.0.1 at 2017-12-07 10:28:01 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"17"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (17.0ms)
+  Rendered crops/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 59ms (Views: 53.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/crops" for 127.0.0.1 at 2017-12-07 10:28:06 -0500
+Processing by CropsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JUT7wtFivWfhyES7x0LRRuodMfGeJv5l9SxghIEk0NXD2lDtm/MFY6PvZcv0/SCFoAjM2CesRYiPZH4M62xwEA==", "crop"=>{"name"=>"Groundnut", "season"=>"Rhabi", "farm_id"=>"17"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "crops" ("name", "season", "created_at", "updated_at", "farm_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Groundnut"], ["season", "Rhabi"], ["created_at", "2017-12-07 15:28:06.988035"], ["updated_at", "2017-12-07 15:28:06.988035"], ["farm_id", 17]]
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/crops/22
+Completed 302 Found in 30ms (ActiveRecord: 25.1ms)
+
+
+Started GET "/crops/22" for 127.0.0.1 at 2017-12-07 10:28:07 -0500
+Processing by CropsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering crops/show.html.erb within layouts/application
+  Rendered crops/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 129ms (Views: 123.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/finances/new?crop_id=22&farm_id=17" for 127.0.0.1 at 2017-12-07 10:28:08 -0500
+Processing by FinancesController#new as HTML
+  Parameters: {"crop_id"=>"22", "farm_id"=>"17"}
+  Rendering finances/new.html.erb within layouts/application
+  Rendered finances/_form.html.erb (3.7ms)
+  Rendered finances/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 57ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/finances" for 127.0.0.1 at 2017-12-07 10:28:37 -0500
+Processing by FinancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XWEp0PGd5lu+xaLQppyvfaSsEirsbt2DmiFoEd+GjuxXhIh/z6wke/hLA1limjSpnn6RKNCuxl2hvGOhOsb0Rg==", "finance"=>{"outstanding_loan"=>"5000", "interest_rate"=>".02", "budget"=>"10000", "farm_id"=>"17", "crop_id"=>"22"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "finances" ("outstanding_loan", "interest_rate", "created_at", "updated_at", "farm_id", "budget", "crop_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["outstanding_loan", 5000.0], ["interest_rate", 0.02], ["created_at", "2017-12-07 15:28:37.977468"], ["updated_at", "2017-12-07 15:28:37.977468"], ["farm_id", 17], ["budget", 10000], ["crop_id", 22]]
+  [1m[35m (74.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/finances/18
+Completed 302 Found in 81ms (ActiveRecord: 75.7ms)
+
+
+Started GET "/finances/18" for 127.0.0.1 at 2017-12-07 10:28:38 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 48ms (Views: 41.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/result?crop_id=22&farm=17&fin=18" for 127.0.0.1 at 2017-12-07 10:28:40 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"22", "farm"=>"17", "fin"=>"18"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 59138ms (Views: 169.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 10:32:55 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 43ms (Views: 37.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/finances" for 127.0.0.1 at 2017-12-07 10:32:57 -0500
+Processing by FinancesController#index as HTML
+  Rendering finances/index.html.erb within layouts/application
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT "finances".* FROM "finances"[0m
+  Rendered finances/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 56ms (Views: 48.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/finances/17" for 127.0.0.1 at 2017-12-07 10:33:05 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mFinance Load (0.5ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 46ms (Views: 36.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/result?crop_id=21&farm=16&fin=17" for 127.0.0.1 at 2017-12-07 10:33:07 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"21", "farm"=>"16", "fin"=>"17"}
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.4ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 56783ms (Views: 250.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-07 10:37:36 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 10:38:57 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 62ms (Views: 55.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-07 10:39:00 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 10:39:12 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 58ms (Views: 54.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 10:39:14 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (10.8ms)
+  Rendered farms/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 56ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 10:39:47 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 77ms (Views: 74.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 10:39:50 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (35.8ms)
+  Rendered farms/new.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 82ms (Views: 76.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-07 10:40:42 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 10:55:06 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 10:55:11 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (12.9ms)
+  Rendered farms/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 67ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for 127.0.0.1 at 2017-12-07 10:55:28 -0500
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oi/G4cF2+Qj3651U1OzfVsi2Am8pJedqD2J6KDgHIgjZhmZi+mcMGUaUzKnc+e+FYoSCVEKGt+m1ePsttgv+jQ==", "farm"=>{"size"=>"20", "location"=>"ADILABAD", "irrigation"=>"canal"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "farms" ("size", "location", "irrigation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["size", 20.0], ["location", "ADILABAD"], ["irrigation", "canal"], ["created_at", "2017-12-07 15:55:28.797911"], ["updated_at", "2017-12-07 15:55:28.797911"]]
+  [1m[35m (76.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/18
+Completed 302 Found in 84ms (ActiveRecord: 77.9ms)
+
+
+Started GET "/farms/18" for 127.0.0.1 at 2017-12-07 10:55:28 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 50ms (Views: 43.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/crops/new?farm_id=18" for 127.0.0.1 at 2017-12-07 10:55:31 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"18"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (14.0ms)
+  Rendered crops/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/crops" for 127.0.0.1 at 2017-12-07 10:55:41 -0500
+Processing by CropsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8CANbmXyVLOAYBk9WHlew6Pgh4ekYUY7Zf+0nXDrXKUWvqZBL2Pst8JHOE1rxq8A6fV6rh3r/dYft6oVGqP8YA==", "crop"=>{"name"=>"Moong", "season"=>"Rhabi", "farm_id"=>"18"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "crops" ("name", "season", "created_at", "updated_at", "farm_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Moong"], ["season", "Rhabi"], ["created_at", "2017-12-07 15:55:41.507522"], ["updated_at", "2017-12-07 15:55:41.507522"], ["farm_id", 18]]
+  [1m[35m (47.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/crops/23
+Completed 302 Found in 66ms (ActiveRecord: 49.1ms)
+
+
+Started GET "/crops/23" for 127.0.0.1 at 2017-12-07 10:55:41 -0500
+Processing by CropsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mCrop Load (0.4ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering crops/show.html.erb within layouts/application
+  Rendered crops/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 71ms (Views: 59.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/finances/new?crop_id=23&farm_id=18" for 127.0.0.1 at 2017-12-07 10:55:43 -0500
+Processing by FinancesController#new as HTML
+  Parameters: {"crop_id"=>"23", "farm_id"=>"18"}
+  Rendering finances/new.html.erb within layouts/application
+  Rendered finances/_form.html.erb (4.1ms)
+  Rendered finances/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 94ms (Views: 84.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/finances" for 127.0.0.1 at 2017-12-07 10:55:58 -0500
+Processing by FinancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8wyHOt9Afl4W5F6jqtnoQ7hqkKROuD+iqXUvJOjWjNJKZOz1UzD2T7VMPNKrfx1NDMpQK36+yCxON8MduMgmQ==", "finance"=>{"outstanding_loan"=>"1000", "interest_rate"=>"0.02", "budget"=>"10000", "farm_id"=>"18", "crop_id"=>"23"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "finances" ("outstanding_loan", "interest_rate", "created_at", "updated_at", "farm_id", "budget", "crop_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["outstanding_loan", 1000.0], ["interest_rate", 0.02], ["created_at", "2017-12-07 15:55:58.695515"], ["updated_at", "2017-12-07 15:55:58.695515"], ["farm_id", 18], ["budget", 10000], ["crop_id", 23]]
+  [1m[35m (23.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/finances/19
+Completed 302 Found in 31ms (ActiveRecord: 25.0ms)
+
+
+Started GET "/finances/19" for 127.0.0.1 at 2017-12-07 10:55:58 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/result?crop_id=23&farm=18&fin=19" for 127.0.0.1 at 2017-12-07 10:56:01 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"23", "farm"=>"18", "fin"=>"19"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 59874ms (Views: 215.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/crops/new?farm_id=18" for 127.0.0.1 at 2017-12-07 10:57:50 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"18"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (25.8ms)
+  Rendered crops/new.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 68ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms/18" for 127.0.0.1 at 2017-12-07 10:57:51 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 42ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 10:57:51 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (13.2ms)
+  Rendered farms/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 10:57:52 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 57ms (Views: 50.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-07 10:57:53 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 11:03:28 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 11:03:33 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (19.9ms)
+  Rendered farms/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 76ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for 127.0.0.1 at 2017-12-07 11:03:55 -0500
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D5bKz0PYBIifKtWToAKa3kr7kABZVEj7hmrFuK1Ks/R0P2pMeMnxmS5VhG6oF6oN4MkQOzL3GHg8cES9I0ZvcQ==", "farm"=>{"size"=>"10", "location"=>"PRAKASAM", "irrigation"=>"canal"}, "commit"=>"confirm"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "farms" ("size", "location", "irrigation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["size", 10.0], ["location", "PRAKASAM"], ["irrigation", "canal"], ["created_at", "2017-12-07 16:03:55.710069"], ["updated_at", "2017-12-07 16:03:55.710069"]]
+  [1m[35m (75.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/19
+Completed 302 Found in 83ms (ActiveRecord: 76.8ms)
+
+
+Started GET "/farms/19" for 127.0.0.1 at 2017-12-07 11:03:55 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/crops/new?farm_id=19" for 127.0.0.1 at 2017-12-07 11:03:57 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"19"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (13.1ms)
+  Rendered crops/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 72ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/crops" for 127.0.0.1 at 2017-12-07 11:04:06 -0500
+Processing by CropsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TrQEWoNYMpb3KCRzMEc6J6bjgaLAwXshqQ4x/4qlaHOoKq91ycmKkrUPBQMD+Mvk7PZ8i3lLwMzTRi934O3Itg==", "crop"=>{"name"=>"Jowar", "season"=>"Rhabi", "farm_id"=>"19"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "crops" ("name", "season", "created_at", "updated_at", "farm_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jowar"], ["season", "Rhabi"], ["created_at", "2017-12-07 16:04:06.672639"], ["updated_at", "2017-12-07 16:04:06.672639"], ["farm_id", 19]]
+  [1m[35m (70.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/crops/24
+Completed 302 Found in 87ms (ActiveRecord: 71.9ms)
+
+
+Started GET "/crops/24" for 127.0.0.1 at 2017-12-07 11:04:06 -0500
+Processing by CropsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering crops/show.html.erb within layouts/application
+  Rendered crops/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 130ms (Views: 124.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/finances/new?crop_id=24&farm_id=19" for 127.0.0.1 at 2017-12-07 11:04:08 -0500
+Processing by FinancesController#new as HTML
+  Parameters: {"crop_id"=>"24", "farm_id"=>"19"}
+  Rendering finances/new.html.erb within layouts/application
+  Rendered finances/_form.html.erb (3.3ms)
+  Rendered finances/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 63ms (Views: 54.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/finances" for 127.0.0.1 at 2017-12-07 11:04:23 -0500
+Processing by FinancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6HKHAM609bD733or+hwiEwp++0wfSWDcXBTBLYIdprjilyav8IU3kL1R26I+GrnHMKx4TiOJewJnicqdZ13cEg==", "finance"=>{"outstanding_loan"=>"1000", "interest_rate"=>"0.02", "budget"=>"10000", "farm_id"=>"19", "crop_id"=>"24"}, "commit"=>"confirm"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "finances" ("outstanding_loan", "interest_rate", "created_at", "updated_at", "farm_id", "budget", "crop_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["outstanding_loan", 1000.0], ["interest_rate", 0.02], ["created_at", "2017-12-07 16:04:23.833569"], ["updated_at", "2017-12-07 16:04:23.833569"], ["farm_id", 19], ["budget", 10000], ["crop_id", 24]]
+  [1m[35m (84.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/finances/20
+Completed 302 Found in 95ms (ActiveRecord: 85.7ms)
+
+
+Started GET "/finances/20" for 127.0.0.1 at 2017-12-07 11:04:23 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 44ms (Views: 36.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/result?crop_id=24&farm=19&fin=20" for 127.0.0.1 at 2017-12-07 11:04:25 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"24", "farm"=>"19", "fin"=>"20"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 56252ms (Views: 215.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/crops/new?farm_id=19" for 127.0.0.1 at 2017-12-07 11:10:28 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"19"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (19.5ms)
+  Rendered crops/new.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 77ms (Views: 70.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms/19" for 127.0.0.1 at 2017-12-07 11:10:29 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 36.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 11:10:29 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (17.0ms)
+  Rendered farms/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 71ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 11:10:30 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 45ms (Views: 38.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-07 11:10:31 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 11:15:06 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 66ms (Views: 61.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 11:15:13 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (22.9ms)
+  Rendered farms/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 75ms (Views: 71.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for 127.0.0.1 at 2017-12-07 11:15:32 -0500
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HG527m7gQtlXqEQxI4VNZAJVkqqds0qGQoH1qoyukbpnx9ZtVfG3yObXFcwrkH23qGcSkfYQGgX4m3SvAqJNPw==", "farm"=>{"size"=>"50", "location"=>"PRAKASAM", "irrigation"=>"canal"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "farms" ("size", "location", "irrigation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["size", 50.0], ["location", "PRAKASAM"], ["irrigation", "canal"], ["created_at", "2017-12-07 16:15:32.500429"], ["updated_at", "2017-12-07 16:15:32.500429"]]
+  [1m[35m (75.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/20
+Completed 302 Found in 81ms (ActiveRecord: 76.1ms)
+
+
+Started GET "/farms/20" for 127.0.0.1 at 2017-12-07 11:15:32 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 56ms (Views: 50.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/crops/new?farm_id=20" for 127.0.0.1 at 2017-12-07 11:15:37 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"20"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (14.1ms)
+  Rendered crops/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/crops" for 127.0.0.1 at 2017-12-07 11:15:50 -0500
+Processing by CropsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A5m/qExbqoLEjkNt/wofLJydC/3DMYrLhzVH5cfqJfHlBxSHBsoShoapYh3Mte7v1oj21Hq7MSb9fVltraKFNA==", "crop"=>{"name"=>"Maize", "season"=>"Rhabi", "farm_id"=>"20"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "crops" ("name", "season", "created_at", "updated_at", "farm_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Maize"], ["season", "Rhabi"], ["created_at", "2017-12-07 16:15:50.034925"], ["updated_at", "2017-12-07 16:15:50.034925"], ["farm_id", 20]]
+  [1m[35m (79.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/crops/25
+Completed 302 Found in 86ms (ActiveRecord: 80.5ms)
+
+
+Started GET "/crops/25" for 127.0.0.1 at 2017-12-07 11:15:50 -0500
+Processing by CropsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering crops/show.html.erb within layouts/application
+  Rendered crops/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 48ms (Views: 42.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/finances/new?crop_id=25&farm_id=20" for 127.0.0.1 at 2017-12-07 11:15:54 -0500
+Processing by FinancesController#new as HTML
+  Parameters: {"crop_id"=>"25", "farm_id"=>"20"}
+  Rendering finances/new.html.erb within layouts/application
+  Rendered finances/_form.html.erb (6.3ms)
+  Rendered finances/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 57ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/finances" for 127.0.0.1 at 2017-12-07 11:16:27 -0500
+Processing by FinancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KzBGqTQIn0m5iJCCxhra4LauCFjdbZ3UmQXP1VOvkFkh1ecGCjldaf8GMQsCHEE0jHyLWuGthgqimMRltu/q8w==", "finance"=>{"outstanding_loan"=>"10000", "interest_rate"=>"0.02", "budget"=>"100000", "farm_id"=>"20", "crop_id"=>"25"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "finances" ("outstanding_loan", "interest_rate", "created_at", "updated_at", "farm_id", "budget", "crop_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["outstanding_loan", 10000.0], ["interest_rate", 0.02], ["created_at", "2017-12-07 16:16:27.671198"], ["updated_at", "2017-12-07 16:16:27.671198"], ["farm_id", 20], ["budget", 100000], ["crop_id", 25]]
+  [1m[35m (78.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/finances/21
+Completed 302 Found in 86ms (ActiveRecord: 80.0ms)
+
+
+Started GET "/finances/21" for 127.0.0.1 at 2017-12-07 11:16:27 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 45ms (Views: 39.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/result?crop_id=25&farm=20&fin=21" for 127.0.0.1 at 2017-12-07 11:16:32 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"25", "farm"=>"20", "fin"=>"21"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+Started GET "/result?crop_id=25&farm=20&fin=21" for 127.0.0.1 at 2017-12-07 11:17:32 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"25", "farm"=>"20", "fin"=>"21"}
+  [1m[36mFarm Load (1.5ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCrop Load (1.0ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.9ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 60662ms (Views: 219.7ms | ActiveRecord: 0.6ms)
+
+
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 52487ms (Views: 218.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/finances/21" for 127.0.0.1 at 2017-12-07 11:30:14 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 43ms (Views: 35.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/crops/new?farm_id=20" for 127.0.0.1 at 2017-12-07 11:30:16 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"20"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (16.3ms)
+  Rendered crops/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 61ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms/20" for 127.0.0.1 at 2017-12-07 11:30:17 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 38ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 11:30:18 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (15.4ms)
+  Rendered farms/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 56ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 11:30:18 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 46ms (Views: 40.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-07 11:30:19 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 11:34:05 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 52ms (Views: 47.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 11:34:08 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (75.5ms)
+  Rendered farms/new.html.erb within layouts/application (80.7ms)
+Completed 200 OK in 158ms (Views: 153.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for 127.0.0.1 at 2017-12-07 11:34:21 -0500
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UmkzZNbT30NBGOF1Iaz+afp2+pfApwLQOD+2W4haRX8pwJPn7cIqUvBnsIgpuc66UER6rKsEUlOCJTdeBlaZ+g==", "farm"=>{"size"=>"3", "location"=>"KARIMNAGAR", "irrigation"=>"canal"}, "commit"=>"confirm"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "farms" ("size", "location", "irrigation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["size", 3.0], ["location", "KARIMNAGAR"], ["irrigation", "canal"], ["created_at", "2017-12-07 16:34:21.210146"], ["updated_at", "2017-12-07 16:34:21.210146"]]
+  [1m[35m (31.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/21
+Completed 302 Found in 45ms (ActiveRecord: 32.5ms)
+
+
+Started GET "/farms/21" for 127.0.0.1 at 2017-12-07 11:34:21 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 141ms (Views: 138.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/crops/new?farm_id=21" for 127.0.0.1 at 2017-12-07 11:34:22 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"21"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (10.0ms)
+  Rendered crops/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 196ms (Views: 158.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/crops" for 127.0.0.1 at 2017-12-07 11:34:27 -0500
+Processing by CropsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+42hdltBo1BbSOrT4g3pwewrp681rl3GmHOlMgafIbNcJ2qk/y+iQNKAtt8N8ZkTaVTtwVcAppgKdAcolLcQw==", "crop"=>{"name"=>"Cotton", "season"=>"Rhabi", "farm_id"=>"21"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "crops" ("name", "season", "created_at", "updated_at", "farm_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cotton"], ["season", "Rhabi"], ["created_at", "2017-12-07 16:34:27.647821"], ["updated_at", "2017-12-07 16:34:27.647821"], ["farm_id", 21]]
+  [1m[35m (76.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/crops/26
+Completed 302 Found in 86ms (ActiveRecord: 78.6ms)
+
+
+Started GET "/crops/26" for 127.0.0.1 at 2017-12-07 11:34:27 -0500
+Processing by CropsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering crops/show.html.erb within layouts/application
+  Rendered crops/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 106ms (Views: 101.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/finances/new?crop_id=26&farm_id=21" for 127.0.0.1 at 2017-12-07 11:34:29 -0500
+Processing by FinancesController#new as HTML
+  Parameters: {"crop_id"=>"26", "farm_id"=>"21"}
+  Rendering finances/new.html.erb within layouts/application
+  Rendered finances/_form.html.erb (3.5ms)
+  Rendered finances/new.html.erb within layouts/application (54.5ms)
+Completed 200 OK in 194ms (Views: 88.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/finances" for 127.0.0.1 at 2017-12-07 11:34:41 -0500
+Processing by FinancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GOIX37ysPfHzh9nYF/uBta8jRfBouNnJbNYdcHUo15oSB7Zwgp3/0bUJeFHT/RphlfHG8lR4whdXSxbAkGitMA==", "finance"=>{"outstanding_loan"=>"1000", "interest_rate"=>"0.05", "budget"=>"15000", "farm_id"=>"21", "crop_id"=>"26"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "finances" ("outstanding_loan", "interest_rate", "created_at", "updated_at", "farm_id", "budget", "crop_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["outstanding_loan", 1000.0], ["interest_rate", 0.05], ["created_at", "2017-12-07 16:34:41.413458"], ["updated_at", "2017-12-07 16:34:41.413458"], ["farm_id", 21], ["budget", 15000], ["crop_id", 26]]
+  [1m[35m (85.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/finances/22
+Completed 302 Found in 101ms (ActiveRecord: 87.2ms)
+
+
+Started GET "/finances/22" for 127.0.0.1 at 2017-12-07 11:34:41 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/result?crop_id=26&farm=21&fin=22" for 127.0.0.1 at 2017-12-07 11:34:43 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"26", "farm"=>"21", "fin"=>"22"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.3ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 58086ms (Views: 161.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2017-12-07 11:46:47 -0500
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  Rendered farms/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 66ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2017-12-07 11:46:50 -0500
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (15.0ms)
+  Rendered farms/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 80ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for 127.0.0.1 at 2017-12-07 11:47:17 -0500
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jyquww+kYEBOjjVKE0kmSMo5ozzUKlHQ9daBMfTco+5cgw5ANLWVUf/xZLcbXBabYAsjB7+JAVNPzAA0etB/aw==", "farm"=>{"size"=>"100", "location"=>"NALGONDA", "irrigation"=>"canal"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "farms" ("size", "location", "irrigation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["size", 100.0], ["location", "NALGONDA"], ["irrigation", "canal"], ["created_at", "2017-12-07 16:47:17.940835"], ["updated_at", "2017-12-07 16:47:17.940835"]]
+  [1m[35m (72.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/22
+Completed 302 Found in 77ms (ActiveRecord: 73.9ms)
+
+
+Started GET "/farms/22" for 127.0.0.1 at 2017-12-07 11:47:18 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 48ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/crops/new?farm_id=22" for 127.0.0.1 at 2017-12-07 11:47:29 -0500
+Processing by CropsController#new as HTML
+  Parameters: {"farm_id"=>"22"}
+  Rendering crops/new.html.erb within layouts/application
+  Rendered crops/_form.html.erb (16.7ms)
+  Rendered crops/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 64ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/crops" for 127.0.0.1 at 2017-12-07 11:47:40 -0500
+Processing by CropsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cww4NDp8ytRI6PG0PlBXeFJreu41jzVpgDhrp4CGa4iVkpMbcO1y0ArP0MQN76a7GH6Hx4wFjoT6cHUv6s7LTQ==", "crop"=>{"name"=>"Cotton", "season"=>"Rhabi", "farm_id"=>"22"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "crops" ("name", "season", "created_at", "updated_at", "farm_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cotton"], ["season", "Rhabi"], ["created_at", "2017-12-07 16:47:40.737089"], ["updated_at", "2017-12-07 16:47:40.737089"], ["farm_id", 22]]
+  [1m[35m (76.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/crops/27
+Completed 302 Found in 85ms (ActiveRecord: 77.7ms)
+
+
+Started GET "/crops/27" for 127.0.0.1 at 2017-12-07 11:47:40 -0500
+Processing by CropsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mCrop Load (0.3ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering crops/show.html.erb within layouts/application
+  Rendered crops/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 56ms (Views: 49.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/finances/new?crop_id=27&farm_id=22" for 127.0.0.1 at 2017-12-07 11:47:45 -0500
+Processing by FinancesController#new as HTML
+  Parameters: {"crop_id"=>"27", "farm_id"=>"22"}
+  Rendering finances/new.html.erb within layouts/application
+  Rendered finances/_form.html.erb (2.7ms)
+  Rendered finances/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 58ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/finances" for 127.0.0.1 at 2017-12-07 11:48:39 -0500
+Processing by FinancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6J0tE6Lce60GTAPGe/YLKuK4QGpnEDXBJF3en2xY2h7ieIy8nO25jUDCok+/8JD+2GrDaFvQLh8fwNUviRigtA==", "finance"=>{"outstanding_loan"=>"100000", "interest_rate"=>"0.025", "budget"=>"120000", "farm_id"=>"22", "crop_id"=>"27"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "finances" ("outstanding_loan", "interest_rate", "created_at", "updated_at", "farm_id", "budget", "crop_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["outstanding_loan", 100000.0], ["interest_rate", 0.025], ["created_at", "2017-12-07 16:48:39.427782"], ["updated_at", "2017-12-07 16:48:39.427782"], ["farm_id", 22], ["budget", 120000], ["crop_id", 27]]
+  [1m[35m (78.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/finances/23
+Completed 302 Found in 84ms (ActiveRecord: 79.0ms)
+
+
+Started GET "/finances/23" for 127.0.0.1 at 2017-12-07 11:48:39 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/result?crop_id=27&farm=22&fin=23" for 127.0.0.1 at 2017-12-07 11:48:43 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"27", "farm"=>"22", "fin"=>"23"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.2ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 56734ms (Views: 174.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/finances" for 127.0.0.1 at 2017-12-07 11:51:44 -0500
+Processing by FinancesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6J0tE6Lce60GTAPGe/YLKuK4QGpnEDXBJF3en2xY2h7ieIy8nO25jUDCok+/8JD+2GrDaFvQLh8fwNUviRigtA==", "finance"=>{"outstanding_loan"=>"100000", "interest_rate"=>"0.025", "budget"=>"1200000000", "farm_id"=>"22", "crop_id"=>"27"}, "commit"=>"confirm"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "finances" ("outstanding_loan", "interest_rate", "created_at", "updated_at", "farm_id", "budget", "crop_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["outstanding_loan", 100000.0], ["interest_rate", 0.025], ["created_at", "2017-12-07 16:51:44.901960"], ["updated_at", "2017-12-07 16:51:44.901960"], ["farm_id", 22], ["budget", 1200000000], ["crop_id", 27]]
+  [1m[35m (79.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/finances/24
+Completed 302 Found in 87ms (ActiveRecord: 80.7ms)
+
+
+Started GET "/finances/24" for 127.0.0.1 at 2017-12-07 11:51:44 -0500
+Processing by FinancesController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mFinance Load (0.2ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering finances/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  Rendered finances/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 66ms (Views: 60.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/result?crop_id=27&farm=22&fin=24" for 127.0.0.1 at 2017-12-07 11:51:46 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"crop_id"=>"27", "farm"=>"22", "fin"=>"24"}
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCrop Load (0.1ms)[0m  [1m[34mSELECT  "crops".* FROM "crops" WHERE "crops"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mFinance Load (0.1ms)[0m  [1m[34mSELECT  "finances".* FROM "finances" WHERE "finances"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering pages/result.html.erb within layouts/application
+  Rendered pages/result.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 53214ms (Views: 57.1ms | ActiveRecord: 0.3ms)
+
+
